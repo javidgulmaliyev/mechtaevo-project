@@ -1,5 +1,5 @@
 {
-  "name": "mechtaevo",
+  "name": "mechtaevo-project",
   "version": "1.0.0",
   "private": true,
   "main": "index.js",
@@ -39,9 +39,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/javidgulmaliyev/mechtaevo.git"
+    "url": "https://github.com/javidgulmaliyev/mechtaevo-project.git"
   },
-  "homepage": "https://javidgulmaliyev.github.io/mechtaevo",
+  "homepage": "https://javidgulmaliyev.github.io/mechtaevo-project",
   "devDependencies": {
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
