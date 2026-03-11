@@ -4,6 +4,10 @@
 
 .project-gallery {
   padding-block: functions.responsive-value(60, 8) functions.responsive-value(25, 8);
+  padding-inline: max(
+    (100cqi - var(--container-inner-width, #{variables.$inner + px})) / 2,
+    #{variables.$padding + px}
+  );
 }
 
 .project-gallery-list {

@@ -3,11 +3,5 @@
 @use "../../variables/variables";
 
 body {
-  font-family: variables.$font-manrope;
-  font-size: functions.responsive-value(14, 12, "default", "default", "fixed-both", "px");
   background-color: variables.$color-f8f9fc;
-
-  .scroll-lock & {
-    overflow: hidden;
-  }
 }
