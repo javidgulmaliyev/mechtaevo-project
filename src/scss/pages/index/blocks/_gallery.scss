@@ -1,0 +1,42 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.project-gallery {
+  padding-block: functions.responsive-value(60, 8) functions.responsive-value(25, 8);
+}
+
+.project-gallery-list {
+  display: grid;
+  grid-template-columns: calc(650 / 887.5 * 1fr) calc(1125 / 887.5 * 1fr);
+  gap: functions.responsive-value(25, 5);
+
+  // .project-gallery-list__item
+  &__item {
+    &:has(.project-gallery-list__image--big) {
+      grid-column: 2 / -1;
+      grid-row: 1 / 3;
+    }
+
+    &:has(.project-gallery-list__image--row) {
+      grid-column: span 2;
+    }
+  }
+
+  // .project-gallery-list__image
+  &__image {
+    display: block;
+    aspect-ratio: 1 / 1;
+    border-radius: functions.responsive-value(20, 10);
+
+    // .project-gallery-list__image--big
+    &--big {
+      aspect-ratio: 1125 / 1325;
+    }
+
+    // .project-gallery-list__image--row
+    &--row {
+      aspect-ratio: 1800 / 900;
+    }
+  }
+}
