@@ -1,0 +1,20 @@
+<section class="project-similar" id="section-project-similar" aria-labelledby="title-project-similar">
+  <svg class="visually-hidden" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-area" viewBox="0 0 25 25">
+      <rect fill="none" width="23.5" height="23.5" x=".75" y=".75" stroke-width="1.5" rx="1.25" />
+      <path stroke="none"
+        d="M6 5.25a.75.75 0 0 0-.75.75v6.75a.75.75 0 0 0 1.5 0v-6h6a.75.75 0 0 0 0-1.5zm14.14 15.64c.42 0 .75-.33.75-.75V13.4a.75.75 0 0 0-1.5 0v6h-6a.75.75 0 0 0 0 1.5zM6 6l-.53.53 14.14 14.14.53-.53.53-.53L6.53 5.47z" />
+    </symbol>
+    <symbol id="icon-sizes" viewBox="0 0 39 39">
+      <rect fill="none" width="23.5" height="23.5" x="13.75" y="1.75" stroke-width="1.5" rx="1.25" />
+      <path stroke="none"
+        d="M5.47 26.53c.3.3.77.3 1.06 0l4.77-4.77a.75.75 0 0 0-1.06-1.06L6 24.94 1.76 20.7A.75.75 0 1 0 .7 21.76zM6.53.47a.75.75 0 0 0-1.06 0L.7 5.24A.75.75 0 0 0 1.76 6.3L6 2.06l4.24 4.24a.75.75 0 0 0 1.06-1.06zM6 26h.75V1h-1.5v25zM12.47 32.47c-.3.3-.3.77 0 1.06l4.77 4.77a.75.75 0 0 0 1.06-1.06L14.06 33l4.24-4.24a.75.75 0 0 0-1.06-1.06zm26.06 1.06c.3-.3.3-.77 0-1.06l-4.77-4.77a.75.75 0 0 0-1.06 1.06L36.94 33l-4.24 4.24a.75.75 0 0 0 1.06 1.06zM13 33v.75h25v-1.5H13z" />
+    </symbol>
+  </svg>
+  <h2 class="project-similar__title" id="title-project-similar">Похожие проекты</h2>
+  <div class="similar-slider swiper">
+    <ul class="similar-slider__wrapper swiper-wrapper">
+      @@loop("similar-blocks/slide.html", "json/pages/index/blocks/similar/slide.json")
+    </ul>
+  </div>
+</section>

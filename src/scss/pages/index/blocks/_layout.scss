@@ -85,6 +85,8 @@
 
   // .layout-form__button
   &__button {
+    --outline-color: #{variables.$color-1869db};
+
     display: flex;
     align-items: center;
     justify-content: center;

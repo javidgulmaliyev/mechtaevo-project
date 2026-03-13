@@ -1,0 +1,174 @@
+@use "../../../functions/functions";
+@use "../../../mixins/mixins";
+@use "../../../variables/variables";
+
+.project-similar {
+  padding-block: functions.responsive-value(25, 8) functions.responsive-value(25, 12);
+  padding-inline: max(
+    (100cqi - var(--container-inner-width, #{variables.$inner + px})) / 2,
+    #{variables.$padding + px}
+  );
+  font-family: variables.$font-manrope;
+
+  // .project-similar__title
+  &__title {
+    margin-block-end: functions.responsive-value(50, 10);
+    font-weight: 500;
+    font-size: functions.responsive-value(48, 24);
+    line-height: 2.17;
+
+    @media (min-width: #{768 + 0.1px}) {
+      line-height: 1.08;
+    }
+  }
+}
+
+.similar-slider {
+  border-radius: functions.responsive-value(20, 10);
+
+  // .similar-slider__wrapper
+  &__wrapper {
+  }
+
+  // .similar-slider__slide
+  &__slide {
+  }
+}
+
+.similar-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-block-size: 385px;
+  padding-block: functions.responsive-value(23, 19) functions.responsive-value(35, 31);
+  padding-inline: functions.responsive-value(30, 17);
+  font-family: variables.$font-inter;
+  color: variables.$color-white;
+  border-radius: functions.responsive-value(20, 10);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
+  }
+
+  // .similar-card__header
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+  }
+
+  // .similar-card__title
+  &__title {
+    font-weight: 500;
+    font-size: functions.responsive-value(32, 24);
+
+    a {
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+      }
+    }
+  }
+
+  // .similar-card__characteristics
+  &__characteristics {
+    margin-inline-start: auto;
+  }
+}
+
+.similar-characteristics {
+  display: flex;
+  align-items: center;
+  gap: functions.responsive-value(21, 5);
+
+  // .similar-characteristics__item
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: functions.responsive-value(10, 5);
+  }
+
+  // .similar-characteristics__icon
+  &__icon {
+    flex: 0 0 auto;
+    font-size: 0;
+
+    svg {
+      width: functions.responsive-value(25, 20);
+      height: functions.responsive-value(25, 20);
+    }
+
+    // .similar-characteristics__icon--big
+    &--big {
+      transform: translateY(functions.responsive-value(7, 6));
+
+      svg {
+        width: functions.responsive-value(39, 32);
+        height: functions.responsive-value(39, 32);
+      }
+    }
+  }
+
+  // .similar-characteristics__value
+  &__value {
+    font-size: functions.responsive-value(20, 14);
+    line-height: 1;
+  }
+}
+
+.similar-tags {
+  position: relative;
+  isolation: isolate;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: functions.responsive-value(15, 5);
+
+  // .similar-tags__item
+  &__item {
+    &:has(.similar-tags__link--bold) {
+      margin-inline-start: auto;
+    }
+  }
+
+  // .similar-tags__link
+  &__link {
+    --outline-color: #{variables.$color-white};
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-block-size: functions.responsive-value(35, 25);
+    padding-block: 4px;
+    padding-inline: functions.responsive-value(9, 6);
+    font-size: functions.responsive-value(16, 12, "default", "default", "fixed-both", "px");
+    text-align: center;
+    color: variables.$color-black;
+    background-color: variables.$color-white;
+    border-radius: 20px;
+
+    // .similar-tags__link--bold
+    &--bold {
+      padding-inline: functions.responsive-value(13, 8);
+      font-weight: 600;
+      font-size: functions.responsive-value(16, 14);
+    }
+
+    @include mixins.prefers-reduced-motion {
+      transition-property: color, background-color;
+      transition-duration: 0.3s;
+    }
+
+    @include mixins.hover {
+      color: variables.$color-f8f9fc;
+      background-color: variables.$color-1869db;
+    }
+  }
+}
