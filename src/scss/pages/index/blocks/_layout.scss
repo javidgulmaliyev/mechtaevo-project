@@ -70,8 +70,10 @@
 
   // .layout-form__input
   &__input {
+    inline-size: 100%;
     padding-inline: 24px;
     font-size: 16px;
+    background-color: unset;
     border-radius: 10px;
 
     @media (max-width: 390px) {
